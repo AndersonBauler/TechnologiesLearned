@@ -1,0 +1,11 @@
+package projetoAula;
+
+public class array {
+
+	public static void main(String[] args) {
+		String[] nomes = { "Anderson", "João", "Manoel", "Carlos"};
+		
+		System.out.println( nomes[2], nomes[3] );
+	}
+
+}

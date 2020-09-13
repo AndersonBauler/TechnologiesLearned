@@ -1,0 +1,17 @@
+package projetoAula;
+
+public class aula {
+
+	public static void main(String[] args) {
+		String resultado;
+		int idade = 10;
+		
+		if (idade < 12) {
+			resultado = "Criança";
+		}
+		
+		System.out.println( resultado );
+
+	}
+
+}

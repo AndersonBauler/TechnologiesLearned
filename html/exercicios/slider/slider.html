@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="style.css">
+
+<div wm-slider>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342" title="Muro da Cidade por Tarso Bessa">
+    </p>
+    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+    </p>
+    
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de jaineio" height="342">
+    </p>
+    
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50px" align="left">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </p>
+    
+    <p class="cidade"></p>
+    
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>
+</div>
+
+<script>
+    const images = document.querySelectorAll('[wm-slider] > p')
+    var currIndex = 0
+    var posX = -300
+    var opacity = 0
+
+    const timer = setInterval(() => { slide() }, 3000)
+
+    function slide() {
+        images.forEach(e => {
+            e.style.display = 'none'
+            e.style.left = posX + "px"
+            e.style.opacity = 0 + "%"
+        })
+        
+        if (currIndex == (images.length - 1)) {
+            currIndex = 0
+        } else {
+            currIndex += 1
+        }
+
+        slideEnter(currIndex)
+    }
+
+    function slideEnter(currIndex) {
+        if (posX < 0) {
+            var moveIn = setInterval(() => {
+                images[currIndex].style.left = posX + "px"
+                images[currIndex].style.opacity = opacity + "%"
+                images[currIndex].style.display = "block"
+                posX += 2
+                opacity += 1
+                if (posX > 0) {
+                    clearInterval(moveIn)
+                    setTimeout(() => { slideOut() }, 1000);
+                }
+            }, 1)
+        }
+    }
+
+
+    function slideOut() {
+        if (posX < 300) {
+            var moveOut = setInterval(() => {
+                images[currIndex].style.left = posX + "px"
+                images[currIndex].style.opacity = opacity + "%"
+                images[currIndex].style.display = "block"
+                posX += 2
+                opacity -= 1
+                if (posX > 300) {
+                    clearInterval(moveOut)
+                    posX = -300
+                    images[currIndex].style.display = 'none'
+                    opacity = 0
+                }
+            }, 1)
+        }
+    }
+
+</script>

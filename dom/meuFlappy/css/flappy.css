@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Pixel";
+    src: url("../fonts/Pixel.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[wm-flappy] {
+    background-color: rgb(116, 211, 255);
+    width: 70%;
+    height: 70%;
+    border: 5px solid dodgerblue;
+}
+

@@ -1,0 +1,14 @@
+package projetoAula;
+
+public class aula {
+
+	public static void main(String[] args) {
+		int valor1 = 10;
+		int valor2 = 5;
+		int resultado;
+		
+		System.out.println( resultado );
+
+	}
+
+}
