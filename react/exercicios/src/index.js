@@ -1,6 +1,15 @@
-import React from 'react'
+import React/* ,  { Fragment, Component } */ from 'react'
 import ReactDOM from 'react-dom'
 
-import BomDia from './componentes/BomDia'
+import Pai from './componentes/Pai'
+import Filho from './componentes/Filho'
 
-ReactDOM.render(<BomDia nome="Guilherme"/>, document.getElementById('root'))
+ReactDOM.render(
+    <div>
+        <Pai nome="Paulo" sobrenome="Silva">
+            <Filho nome="Pedro" sobrenome="Silva" />
+            <Filho nome="Paulo" sobrenome="Silva" />
+            <Filho nome="Carla" sobrenome="Silva" />
+        </Pai>
+    </div>
+    , document.getElementById('root'))
